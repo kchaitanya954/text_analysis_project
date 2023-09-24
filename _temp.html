@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Text Analysis Tool</title>
+</head>
+<body>
+    <form method="post">
+        {% csrf_token %}
+        <textarea name="input_text" rows="10" cols="50" placeholder="Enter your text here">{{ input_text }}</textarea><br>
+        <button type="submit">Analyze</button>
+    </form>
+
+    {% if suggestions %}
+    <h2>Suggestions:</h2>
+    <ul>
+        {% for suggestion in suggestions %}
+        <li>
+            <strong>Original Sentence:</strong> {{ suggestion.0 }}<br>
+            <strong>Recommended Replacement:</strong> {{ suggestion.1 }}<br>
+            <strong>Similarity Score:</strong> {{ suggestion.2 }}
+        </li>
+        {% endfor %}
+    </ul>
+    {% endif %}
+</body>
+</html>

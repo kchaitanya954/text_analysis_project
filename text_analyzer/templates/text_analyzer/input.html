@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Text Analysis Tool</title>
+</head>
+<body>
+    <h1>Text Analysis Tool</h1>
+    <form method="post", action="{% url 'analysis_result_view' %}">
+        {% csrf_token %}
+        <label for="input_text">Enter your text:</label><br>
+        <textarea id="input_text" name="input_text" rows="10" cols="50" placeholder="Enter your text here">{{ input_text }}</textarea><br>
+        <button type="submit">Analyze</button>
+    </form>
+</body>
+</html>

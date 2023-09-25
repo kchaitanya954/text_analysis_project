@@ -4,6 +4,9 @@ verify_ssl = true
 name = "pypi"
 
 [packages]
+Django = "*"
+spacy = "*"
+scikit-learn = "*"
 
 [dev-packages]
 
